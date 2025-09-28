@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="phu_cat_binh_dinh">Phu Cat, Binh Dinh</string>
+    <string name="todo">TODO</string>
+    <string name="hoai_nam">Hoai Nam</string>
+    <string name="tp_hcm">Tp HCM</string>
+</resources>
