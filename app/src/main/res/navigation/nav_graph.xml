@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <!-- Fragment đầu tiên - Màn hình chào mừng -->
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.myapplication22.WelcomeFragment"
+        android:label="Welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+
+    <!-- Fragment đích - Màn hình hiển thị thông điệp -->
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.example.myapplication22.MessageFragment"
+        android:label="Message">
+        <!-- 🔐 Safe Args: Định nghĩa arguments để truyền dữ liệu an toàn -->
+        <argument
+            android:name="userName"
+            android:argType="string"
+            app:nullable="true"
+            android:defaultValue="Người dùng" />
+        <argument
+            android:name="message"
+            android:argType="string"
+            app:nullable="true"
+            android:defaultValue="Ứng dụng tôi là số 1" />
+        
+        <action
+            android:id="@+id/action_messageFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
